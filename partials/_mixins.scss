@@ -64,7 +64,7 @@
 }
 
 @mixin background-mountains {
-  background-image: $grey-gradient, url("./img/design-back.png");
+  background-image: $grey-gradient, url("../img/design-back.png");
   background-repeat: no-repeat;
   background-size: cover;
 }
