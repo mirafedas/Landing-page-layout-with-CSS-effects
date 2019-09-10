@@ -36,12 +36,18 @@
       background-size: cover;
       background-image: url("../img/header-back.png");
       background-repeat: no-repeat;
-  }
+    }
 
     .logo-and-navigation {
       @include flex-wrap;
+      justify-content: space-evenly;
+      position: fixed;
+      top: 0;
+      width: 100%;
       z-index: 1;
       align-items: center;
+      background: linear-gradient(to top, rgba(252,227,138,0.9) 0%, rgba(243,129,129,0.9) 100%);
+      margin-left: -2em;
 
       .logo {
         padding: 10px;
@@ -58,6 +64,11 @@
           padding: 10px;
           color: $white-color;
           text-transform: uppercase;
+
+          .link {
+            text-decoration: none;
+            color: $white-color;
+          }
         }
 
         &:hover {
@@ -82,7 +93,7 @@
       z-index: 1;
       align-items: center;
       justify-content: center;
-      margin-top: 20px;
+      margin-top: 150px;
       text-align: center;
       color: $white-color;
 
@@ -111,6 +122,10 @@
         background-color: transparent;
         text-transform: uppercase;
         color: $white-color;
+
+        &:hover {
+          transform: scale(1.1);
+        }
       }
     }
 
@@ -324,11 +339,15 @@
       justify-content: center;
 
       .dropdowns-image {
-        max-width: 300px;
+        width: 300px;
+        height: 300px;
         margin: 10px 0;
+        background-image: url('../img/man-with-pic.png');
+        background-repeat: no-repeat;
       }
 
       .dropdown-container {
+        width: 100%;
         border: 1px solid $grey-border;
 
         .dropdown-item {
@@ -346,8 +365,26 @@
               align-items: center;
 
               .dropdown-icon {
-                margin: 10px;
+                margin-right: 10px;
               }
+            }
+
+            .dropdown-arrow-up {
+              width: 40px;
+              height: 40px;
+              margin: 10px;
+              background-image: url("../img/arrow-up.png");
+              background-repeat: no-repeat;
+              background-position: center;
+            }
+
+            .dropdown-arrow-down {
+              width: 40px;
+              height: 40px;
+              margin: 10px;
+              background-image: url("../img/arrow-down.png");
+              background-repeat: no-repeat;
+              background-position: center;
             }
           }
 
@@ -355,7 +392,6 @@
             @include italic-grey-text;
             height: 100px;
             padding: 10px;
-            border-top: 1px solid #e5e5e5;
             text-align: start;
             overflow: scroll;
           }
@@ -366,7 +402,6 @@
 
   .jon-doe-citation {
    @include citation;
-   justify-content: space-between;
   }
 
   .meet-our-team {
@@ -419,6 +454,21 @@
 
   .some-of-our-work {
     @include section-top;
+
+    .modal-window {
+      position: absolute;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      background-color: $black-opacity;
+      height: 100%;
+      width: 100%;
+      z-index: 100;
+
+      .modal-image {
+        width: 50%;
+      }
+    }
 
     .img-container {
       display: grid;
@@ -493,7 +543,6 @@
 
   .joshua-citation {
     @include citation;
-    justify-content: space-between;
   }
 
   .what-people-say {
@@ -526,7 +575,8 @@
     @include section-top;
 
     .blog-container {
-      @include flex-wrap;;
+      @include flex-wrap;
+      justify-content: space-evenly;
       margin: 20px 0;
 
       .blog-post {
@@ -691,6 +741,10 @@
         color: $section-line-color;
       }
     }
+  }
+
+  .hidden {
+    display: none;
   }
 }
 

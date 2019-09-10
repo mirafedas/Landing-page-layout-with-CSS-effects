@@ -27,7 +27,7 @@
             flex-wrap: wrap;
             display: grid;
             grid-template-rows: 50% 50%;
-            grid-template-columns: 10% 30% 60%;
+            grid-template-columns: 40px 15% 60%;
   
             .section-header {
               text-align: left;
@@ -54,115 +54,110 @@
         justify-content: center;
       }
     }
-  }
 
-  .amazing-services {
-    .services {
-      @include flex-wrap;
+    .amazing-services {
+      .services {
+        @include flex-wrap;
 
-      .services-wrapper {
-        margin: 0 30px;
+        &-wrapper {
+          margin: 0 30px;
 
-        .service-description {
-          grid-template-columns: 20% 30% 50%;
+          &-description {
+            grid-template-columns: 20% 30% 50%;
 
-          .section-header {
-            margin-left: 10px;
-          }
+            .section-header {
+              margin-left: 10px;
+            }
 
-          .section-text {
-            margin-left: 10px;
-            width: 200px;
+            .section-text {
+              margin-left: 10px;
+              width: 200px;
+            }
           }
         }
       }
     }
-  }
   
-  .meet-our-team {
-    .team-images {
-      @include flex-wrap;
-      justify-content: space-evenly;
+    .meet-our-team {
+      .team-images {
+        @include flex-wrap;
+        justify-content: space-evenly;
 
-      .team-member-wrapper {
-        width: 30%;
+        .team-member-wrapper {
+          width: 30%;
 
-        &:first-child, &:nth-child(2) {
-          margin-right: 10px;
-        }
-      }
-    }
-  }
-
-  .what-we-do {
-    .dropdowns-wrapper {
-      .dropdowns-image {
-        width: 50%;
-        height: 50%;        
-      }
-
-      .dropdown-container {
-        margin: 10px 0 0 10px;
-        width: 45%;
-      }
-    }
-  }
-
-  .what-people-say {
-    .clients-container {
-      @include flex-wrap;
-      justify-content: space-evenly;
-
-      .client-wrapper {
-        width: 40%;
-      }
-    }
-  }
-
-  .some-of-our-work {
-    .img-container {
-      .work-images {
-        width: 30%;
-        height: 100%;
-      }
-    }
-  }
-
-  .latest-blog {
-    .blog-container {
-      .blog-post {
-        width: 30%;
-        margin: 0 10px;
-      }
-    }
-  }
-
-  .footer-container {
-    .left-side-footer {
-      margin-right: 10px;
-      width: 30%;
-    }
-
-    .blogs-wrapper {
-      margin-right: 10px;
-      width: 30%;
-
-      .blogs-container {
-        .blog-item {
-          flex-wrap: nowrap;
-          padding: 0;
-          margin-bottom: 10px;
-
-          .blog-img {
-            width: 40%;
-            height: 100%
+          &:first-child, &:nth-child(2) {
+            margin-right: 10px;
           }
         }
       }
     }
 
-    .instagram-container {
-      width: 30%;
+    .what-we-do {
+      .dropdowns-wrapper {
+        .dropdown-container {
+          margin: 10px 0 0 10px;
+          min-width: 300px;
+        }
+      }
+    }
+
+    .what-people-say {
+      .clients-container {
+        @include flex-wrap;
+        justify-content: space-evenly;
+
+        .client-wrapper {
+          width: 40%;
+        }
+      }
+    }
+
+    .some-of-our-work {
+      .img-container {
+        .work-images {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    .latest-blog {
+      .blog-container {
+        .blog-post {
+          width: 30%;
+          margin: 0 10px;
+        }
+      }
+    }
+
+    .footer-container {
+      .left-side-footer {
+        margin-right: 10px;
+        width: 30%;
+      }
+
+      .blogs-wrapper {
+        margin-right: 10px;
+        width: 30%;
+
+        .blogs-container {
+          .blog-item {
+            flex-wrap: nowrap;
+            padding: 0;
+            margin-bottom: 10px;
+
+            .blog-img {
+              width: 40%;
+              margin-top: 15px;
+            }
+          }
+        }
+      }
+
+      .instagram-container {
+        width: 30%;
+      }
     }
   }
 }
@@ -173,13 +168,14 @@
       .services {
         flex-direction: row;
 
-        .services-wrapper {
+        &-wrapper {
           flex-direction: row;
           justify-content: space-evenly;
           width: 100%;
         }
       }
     }
+
     .some-of-our-work {
       .img-container {
         height: 20em;
