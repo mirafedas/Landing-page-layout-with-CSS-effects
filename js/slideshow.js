@@ -1,17 +1,17 @@
 const leftArrows = document.querySelectorAll('.slides-go-left');
 const rightArrows = document.querySelectorAll('.slides-go-right');
 
-const changeSlide = (e) => {
-  const container = e.target.parentNode.children[1];
+const changeSlide = ({target}) => {
+  const container = target.parentNode.children[1];
   
-  if (e.target.classList[0] === 'slides-go-right') {
+  if (target.classList[0] === 'slides-go-right') {
     container.scrollLeft += container.clientWidth;
   } else {
     container.scrollLeft -= container.clientWidth;
   }
 }
 
-const slideshowModule = {
+const slideshow = {
   init: () => {
     for (let i = 0; i < leftArrows.length; i++) {
       leftArrows[i].addEventListener('click', changeSlide);
@@ -23,4 +23,4 @@ const slideshowModule = {
   }
 }
 
-export default slideshowModule;
+export default slideshow;

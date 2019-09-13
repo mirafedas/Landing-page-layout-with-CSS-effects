@@ -3,6 +3,12 @@
 
 @media (min-width: 540px) {
   .wrapper {
+    .header-container {
+      .header-center {
+        margin-top: 25%;
+      }
+    }
+    
     .statistics {
       flex-wrap: nowrap;
       padding: 0 2em;
@@ -162,7 +168,7 @@
   }
 }
 
-@media (min-width: 720px) {
+@media (min-width: 920px) {
   .wrapper {
     .amazing-services {
       .services {

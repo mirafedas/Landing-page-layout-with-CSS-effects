@@ -1,7 +1,7 @@
 const linkArr = [...document.querySelectorAll(".link")];
 const sections = [...document.querySelectorAll(".nav-section")];
 
-const scrollModule = {
+const scroll = {
   init: () => {
     for (let i = 0; i < linkArr.length; i++) {
       let sectionTop = sections[i].getBoundingClientRect().top;
@@ -14,4 +14,4 @@ const scrollModule = {
   }
 }
 
-export default scrollModule;
+export default scroll;

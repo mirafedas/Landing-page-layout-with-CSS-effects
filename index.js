@@ -1,14 +1,14 @@
-import accordeonModule from './accordeonModule.js';
-import popupModule from './popupModule.js';
-import scrollModule from './scrollModule.js';
-import slideshowModule from './slideshowModule.js';
-import fetchModule from './fetchModule.js';
+import accordeon from './js/accordeon.js';
+import scroll from './js/scroll.js';
+import slideshow from './js/slideshow.js';
+import fetchContent from './js/fetchContent.js';
+import popup from './js/popup.js';
 
 window.onload = function() {
   window.scrollTo({top: 0});
-  scrollModule.init();
-  accordeonModule.init();
-  slideshowModule.init();
-  popupModule.init();
-  fetchModule.init();
+  scroll.init();
+  accordeon.init();
+  slideshow.init();
+  fetchContent.init();
+  popup();
 }

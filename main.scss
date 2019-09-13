@@ -6,14 +6,98 @@
   padding: 0;
 }
 
+.slides-go-right, .slides-go-left {
+  position: absolute;
+  height: 100%;
+  width: 50px;
+  background-position-y: center;
+  background-repeat: no-repeat;
+  z-index: 10;
+}
+
+.slides-go-right {
+  right: 0;
+  background-image: url("../img/arrow-right.png");
+}
+
+.slides-go-left {
+  background-image: url("../img/arrow-left.png");
+}
+
+.blockquote-wrapper {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 80vw 80vw 80vw 80vw 80vw;
+  max-width: 80vw;
+  scroll-behavior: smooth;
+  overflow-x: scroll;
+
+  &::-webkit-scrollbar {
+    background-color: inherit;
+  }
+
+  &:first-child {
+    grid-column: 1;
+  }
+
+  &:nth-child(2) {
+    grid-column: 2;
+  }
+
+  &:nth-child(3) {
+    grid-column: 3;
+  }
+
+  &:nth-child(4) {
+    grid-column: 4;
+  }
+
+  &:nth-child(5) {
+    grid-column: 5;
+  }
+
+  .citation {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    margin: 0 20px;
+    width: 70%;
+
+    &-icon {
+      margin-left: 10px;
+      width: 20%;
+    }
+
+    &-text-wrapper {
+      margin: 10px;
+
+      .red-line {
+        margin: 10px 10px 10px 0;
+      }
+
+      .citation-signature {
+        display: flex;
+        font-family: $secondary-font;
+      }
+
+      .citation-text {
+        color: $light-grey-font-color;
+        font-style: italic;
+      }
+    }
+  }
+}
+
 .wrapper {
   font-family: $main-font;
 
   .header-container {
     @include flex-column;
+    justify-content: space-between;
     position: relative;
     padding: $side-padding;
     padding-top: 10px;
+    min-height: 100vh;
 
     &:after {
       content: "";
@@ -93,7 +177,7 @@
       z-index: 1;
       align-items: center;
       justify-content: center;
-      margin-top: 150px;
+      margin-top: 45%;
       text-align: center;
       color: $white-color;
 
@@ -206,7 +290,6 @@
 
     .story-img {
       height: 100%;
-      max-width: 300px;
     }
     
     .image-on-hover {
@@ -448,15 +531,16 @@
 
     .hipsters-logos-img {
       width: 100%;
-      max-height: 60px;
+      max-height: 100px;
+      max-width: 1000px;
     }
   }
 
   .some-of-our-work {
     @include section-top;
 
-    .modal-window {
-      position: absolute;
+    #modal-window {
+      position: fixed;
       display: none;
       align-items: center;
       justify-content: center;
@@ -464,6 +548,7 @@
       height: 100%;
       width: 100%;
       z-index: 100;
+      top: 0;
 
       .modal-image {
         width: 50%;
@@ -475,6 +560,7 @@
       grid-template-columns: 1fr 1fr 1fr 1fr;
       grid-template-rows: 50% 50%;
       height: 15em;
+      max-width: 900px;
 
       .image-container {
         margin: 0;
@@ -583,8 +669,17 @@
         @include flex-column;
         align-items: center;
 
+        .blog-text {
+          height: 200px;
+          overflow: scroll;
+        }
+
         .img-wrapper {
           position: relative;
+        }
+
+        .post-heading {
+          height: 20px;
         }
 
         .post-date {
@@ -615,7 +710,7 @@
 
         .views-wrapper {
           display: flex;
-          padding: 10px;
+          padding: 20px;
 
           .views-item {
             margin: 0 5px;
